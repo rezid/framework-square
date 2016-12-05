@@ -1,13 +1,13 @@
 CC := clang++ 
 SRCDIR := src
 BUILDDIR := build
-TARGET := bin/runner
+TARGET := bin/app.out
 
 SRCEXT := cpp
 SOURCES := $(shell find $(SRCDIR) -type f -name *.$(SRCEXT))
 OBJECTS := $(patsubst $(SRCDIR)/%,$(BUILDDIR)/%,$(SOURCES:.$(SRCEXT)=.o))
 CFLAGS := -Wall -std=c++11 #--analyze 
-LIB := -L lib
+LIB :=  -pthread -L lib
 INC := -I include
 
 $(TARGET): $(OBJECTS)
