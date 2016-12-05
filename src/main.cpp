@@ -10,12 +10,12 @@ int main()
 
     // Initialization
     State round1(&game);
-    Number n1{1};
-    unique_ptr<Number> p_num1{new Number(2)};
-    unique_ptr<Number> p_num2{new Number(3)};
-    round1.push_back(unique_ptr<Number>(&n1));
+    unique_ptr<Number> p_num1{new Number(1)};
+    unique_ptr<Number> p_num2{new Number(2)};
+    unique_ptr<Number> p_num3{new Number(3)};
     round1.push_back(move(p_num1));
     round1.push_back(move(p_num2));
+    round1.push_back(move(p_num3));
 
     p_num1 = unique_ptr<Number>(new Number(99));
     State round2(3, move(p_num1));
@@ -56,7 +56,7 @@ int main()
     //Algorithme
 
     State algo1{round1};
-    unique_ptr<Number> str{new Number(4)};
+    unique_ptr<Number> str{new Number(100)};
     algo::replace(algo1.begin() + 1, move(str));
 
     State algo2{round1};
