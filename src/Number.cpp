@@ -1,14 +1,19 @@
 #include "Number.hpp"
-#include <iostream>
 
-Number::Number(int n) : num{n} {}
+#include "Comparator_abstract.hpp"
 
-void Number::draw() 
+Number::Number(Comparator_abstract &c) : Element(c) {}
+
+bool Number::compare(Element *e)
 {
-	std::cout << num;
+    comparator->compare_number_with_element(this, e);
+    return true;
 }
-
-int Number::getNum()
+bool Number::compare(Number *e)
+{ 
+    return true;
+}
+bool Number::compare(Wall *e)
 {
-	return num;
+    return true;
 }

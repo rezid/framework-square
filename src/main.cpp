@@ -1,82 +1,25 @@
 #include <iostream>
-#include "algo.hpp"
+#include <vector>
+
+#include "Element.hpp"
 #include "Number.hpp"
+#include "Wall.hpp"
+#include "Comparator.hpp"
 
 using namespace std;
 
 int main()
 {
-    int game = 1;
+    vector<Element *> v;
+    Comparator c;
 
-    // Initialization
-    State round1(&game);
-    unique_ptr<Number> p_num1{new Number(1)};
-    unique_ptr<Number> p_num2{new Number(2)};
-    unique_ptr<Number> p_num3{new Number(3)};
-    round1.push_back(move(p_num1));
-    round1.push_back(move(p_num2));
-    round1.push_back(move(p_num3));
+    v.push_back(new Element(c));
+    v.push_back(new Number(c));
+    v.push_back(new Wall(c));
 
-    p_num1 = unique_ptr<Number>(new Number(99));
-    State round2(3, move(p_num1));
+    v[1]->compare(v[1]);
 
-    State round3{round1};
-
-    State round4;
-    round4 = round2;
-
-    cout << "round1:\n";
-    for (auto it = round1.begin(); it != round1.end(); ++it)
-    {
-        (*it)->draw();
-        std::cout << "\n";
-    }
-
-    cout << "\nround2:\n";
-    for (auto it = round2.begin(); it != round2.end(); ++it)
-    {
-        (*it)->draw();
-        std::cout << "\n";
-    }
-
-    cout << "\nround3:\n";
-    for (auto &e : round3)
-    {
-        e->draw();
-        std::cout << "\n";
-    }
-
-    cout << "\nround4:\n";
-    for (auto &e : round4)
-    {
-        e->draw();
-        std::cout << "\n";
-    }
-
-    //Algorithme
-
-    State algo1{round1};
-    unique_ptr<Number> str{new Number(100)};
-    algo::replace(algo1.begin() + 1, move(str));
-
-    State algo2{round1};
-    algo::swap(algo2.begin(), algo2.end() - 1);
-
-    cout << "\nreplace algorithm:\n";
-    for (auto &e : algo1)
-    {
-        e->draw();
-        std::cout << "\n";
-    }
-
-    cout << "\nswap algorithm:\n";
-    for (auto &e : algo2)
-    {
-        e->draw();
-        std::cout << "\n";
-    }
-
-    int i = 0;
-    std::cin >> i;
+    char d;
+    cin >> d;
     return 0;
 }

@@ -1,12 +1,16 @@
-class State;
+#ifndef ELEMENT_HPP
+#define ELEMENT_HPP
+
+class Comparator_abstract;
 
 class Element
 {
   public:
-    virtual void draw() = 0;
-    virtual ~Element(){};
+    Element(Comparator_abstract &c);
+    virtual bool compare(Element *e);
 
-  private:
-    State *parent;
-    int position;
+  public:
+    Comparator_abstract *comparator;
 };
+
+#endif

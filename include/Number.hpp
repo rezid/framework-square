@@ -1,16 +1,17 @@
-#ifndef ELEMENT_H
-#define ELEMENT_H
+#ifndef NUMBER_HPP
+#define NUMBER_HPP
+
+class Wall;
 #include "Element.hpp"
-#endif
+
 
 class Number : public Element
 {
-public:
-  Number(int num);
-  void draw();
-  int getNum();
-  ~Number() {}
-
-private:
-  int num;
+  public:
+    Number(Comparator_abstract &c); 
+    virtual bool compare(Element *e);   
+    virtual bool compare(Number *e);   
+    virtual bool compare(Wall *e);  
 };
+
+#endif
