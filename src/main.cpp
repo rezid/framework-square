@@ -1,25 +1,24 @@
 #include <iostream>
-#include <vector>
 
-#include "Element.hpp"
-#include "Number.hpp"
-#include "Wall.hpp"
-#include "Comparator.hpp"
+#include "lib.hpp"
+#include "Game_2048.hpp"
+#include "Blank.hpp"
+#include "Cmd.hpp"
 
-using namespace std;
+using namespace z;
 
 int main()
 {
-    vector<Element *> v;
-    Comparator c;
+    ElementPtr brush = ElementPtr(new Blank());
 
-    v.push_back(new Element(c));
-    v.push_back(new Number(c));
-    v.push_back(new Wall(c));
+    bool restart = false;
 
-    v[1]->compare(v[1]);
+    do
+    {
+        Game_2048 game(6, 4, brush->make_copy(), 128);
+        restart = game.start();
+    }
+    while ( restart );
 
-    char d;
-    cin >> d;
     return 0;
 }

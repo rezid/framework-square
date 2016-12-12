@@ -1,17 +1,14 @@
 #ifndef NUMBER_HPP
 #define NUMBER_HPP
 
-class Wall;
+#include "lib.hpp"
 #include "Element.hpp"
 
-
-class Number : public Element
+class z::Number : public z::Element
 {
-  public:
-    Number(Comparator_abstract &c); 
-    virtual bool compare(Element *e);   
-    virtual bool compare(Number *e);   
-    virtual bool compare(Wall *e);  
+	public:
+		int num;
+		virtual ElementPtr make_copy() = 0;
 };
 
 #endif

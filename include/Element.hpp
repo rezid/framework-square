@@ -1,16 +1,22 @@
 #ifndef ELEMENT_HPP
 #define ELEMENT_HPP
 
-class Comparator_abstract;
+#include "lib.hpp"
+#include <string>
 
-class Element
+class z::Element
 {
   public:
-    Element(Comparator_abstract &c);
-    virtual bool compare(Element *e);
+    virtual ElementPtr make_copy() = 0;
 
-  public:
-    Comparator_abstract *comparator;
+    virtual ElementPtr merge(Element *e, z::Element_type t = z::Element_type::ELEMENT) { return nullptr; }
+    
+    virtual bool is_equal(Element* e, bool& out, z::Element_type t = z::Element_type::ELEMENT) { return true; }
+    virtual bool is_greater(Element* e, bool& out, z::Element_type t = z::Element_type::ELEMENT) { return true; }
+
+    virtual z::Element_type get_type() {return z::Element_type::ELEMENT;}
+
+    std::string printable;
 };
 
 #endif

@@ -6,7 +6,7 @@ TARGET := bin/app.out
 SRCEXT := cpp
 SOURCES := $(shell find $(SRCDIR) -type f -name *.$(SRCEXT))
 OBJECTS := $(patsubst $(SRCDIR)/%,$(BUILDDIR)/%,$(SOURCES:.$(SRCEXT)=.o))
-CFLAGS := -Wall -std=c++11 #--analyze 
+CFLAGS := -g -O0 -Wall -std=c++11 #--analyze 
 LIB :=  -pthread -L lib
 INC := -I include
 
