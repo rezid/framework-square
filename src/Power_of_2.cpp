@@ -5,6 +5,9 @@ using namespace z;
 
 int Power_of_2::temp = 0;
 
+/* Lire les commentaires dans Power_of_2.hpp pour toute information sur
+    ses fonctions */
+
 ElementPtr Power_of_2::make_copy()
 {
     return ElementPtr(new Power_of_2(num));

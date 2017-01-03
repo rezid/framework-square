@@ -4,6 +4,9 @@
 
 using namespace z;
 
+/* Lire les commentaires dans Blank.hpp pour toute information sur
+    ses fonctions */
+
 ElementPtr Blank::make_copy()
 {
 	return ElementPtr(new Blank());

@@ -10,6 +10,9 @@
 using namespace std;
 using namespace z;
 
+/* Lire les commentaires dans Game_2048.hpp pour toute information sur
+    ses fonctions */
+
 void merge_to_the_left(Grid *grid)
 {
     ElementPtr e = ElementPtr(new Blank());
@@ -103,9 +106,9 @@ void Game_2048::display_grid()
 	     << endl;
     }
 
-    cout << "\n\n Controls (+ :: o)\t\t\t\tu - undo\tr - restart\n\n\tW\t\t     ^\t\t\th - help\tq - quit\n\t\t\t\t\t\t\t\t"
+    cout << "\n\n Controls (+ :: o)\t\t\t\tu - undo\tr - restart\n\n\tZ\t\t     ^\t\t\th - help\te - exit\n\t\t\t\t\t\t\t\t"
 
-	 << " \n   A    S    D\t\t<    v    >\t\t\t     ."
+	 << " \n   Q    S    D\t\t<    v    >\t\t\t     ."
 	 << " \n\t\t\t\t                             ";
 }
 

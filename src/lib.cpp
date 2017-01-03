@@ -8,6 +8,8 @@
 using namespace z;
 using namespace std;
 
+/* Lire les commentaires dans lib.hpp pour toute information sur
+    ses fonctions */
 
 ElementPtr z::merge(Element *e0, Element *e1)
 {

@@ -7,6 +7,9 @@
 
 using namespace z;
 
+/* Exemple d'implementation du jeux 2048 basique en utilisant les fonctionalités de notre lib.
+   tout commence par la création d'une classe Game_2048 qui herite de notre class Game (representant la lib)' */
+   
 int main()
 {
     ElementPtr brush = ElementPtr(new Blank());

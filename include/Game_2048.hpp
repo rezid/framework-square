@@ -4,6 +4,8 @@
 #include "lib.hpp"
 #include "Game.hpp"
 
+
+/* Exemple d'utilisation de notre bibliothéque pour implementer le jeux 2048 basique */
 class Game_2048 : public z::Game
 {
 public:
@@ -19,7 +21,6 @@ public:
   int win;
   int max;
   int score;
-
   bool game_win;
   bool game_over;
 

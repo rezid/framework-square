@@ -5,6 +5,9 @@
 using namespace z;
 using namespace std;
 
+/* Lire les commentaires dans Game.hpp pour toute information sur
+    ses fonctions */
+
 Game::Game(int mm, int nn, ElementPtr e0)
 {
     default_element = move(e0);
